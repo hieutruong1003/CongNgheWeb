@@ -2,7 +2,7 @@
 FROM python:3.6.9
 
 RUN apt-get update
-RUN apt-get install -y libpq-dev python3-dev build-essential postgres-server-dev-all
+RUN apt-get install -y libpq-dev python3-dev build-essential postgresql-server-dev-all
 
 # Set the working directory to /app
 WORKDIR /app
