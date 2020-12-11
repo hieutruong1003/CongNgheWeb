@@ -7,7 +7,7 @@ RUN apt-get install -y libpq-dev python3-dev build-essential postgres-server-dev
 # Set the working directory to /app
 WORKDIR /app
 
-COPPY requirements.txt /app
+COPY requirements.txt /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 # Copy the current directory contents into the container
