@@ -8,7 +8,7 @@ app = Flask(__name__)
 dp_ip = os.getenv("db_ip")
 ConnectionData = {}
 ConectionData['user' = 'postgres']
-ConnectionData['host'] = string(db_ip)
+ConnectionData['host'] = str(db_ip)
 ConnectionData['port'] = '5432'
 ConnectionData['database'] = 'teamhhl'
 

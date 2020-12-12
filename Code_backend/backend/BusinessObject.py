@@ -3,6 +3,7 @@ class Customer:
         self.CustomerID = CustpmerID
         self.CustomerName = CustomerName
         slef.ContactName = ContactName
+        self.Address = Address
         self.City = City
         slef.PostalCode = postalCode
         self.Country = Country
