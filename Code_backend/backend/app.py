@@ -1,6 +1,6 @@
 from flask import Flask
 import os
-import BusinessObjects as bo
+import BusinessObject as bo
 import DataObjects as do
 
 app = Flask(__name__)
