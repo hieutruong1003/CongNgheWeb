@@ -5,7 +5,7 @@ class Customer:
         slef.ContactName = ContactName
         self.Address = Address
         self.City = City
-        slef.PostalCode = postalCode
+        slef.PostalCode = PostalCode
         self.Country = Country
 
 if __name__ == "__main__":

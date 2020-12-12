@@ -11,7 +11,7 @@ class Customer:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO Customers(CustomerName,ContactName,Address,City,PostalCode,Country)
+            sql = "INSERT INTO Customers(CustomerName,ContactName, ,City,PostalCode,Country)
                     VALUES (%s,%s,%s,%s,%s,%s)"
             record_to_insert = (customer.CustomerName,customer.ContactName,customer.Address,customer.City,customer.PostalCode,customer.Country)
             cur.execute(sql, record_to_insert)
@@ -23,5 +23,5 @@ class Customer:
         finally:
             if con is not None:
                 con.close()
-if __name == "__main__":
+if __name__ == "__main__":
     print('this is data object package')
