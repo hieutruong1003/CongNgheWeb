@@ -1,5 +1,5 @@
 class Customer:
-    def __init__(self,CustomerID,CustomerName,ContactName,Address,City,PostalCode,Country)
+    def __init__(self,CustomerID,CustomerName,ContactName,Address,City,PostalCode,Country):
         self.CustomerID = CustpmerID
         self.CustomerName = CustomerName
         slef.ContactName = ContactName
