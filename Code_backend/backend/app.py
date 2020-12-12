@@ -23,5 +23,5 @@ def test_inset():
     s1 = c2.insert(c1)
     return s1
 
-if __name == "__main__":
+if __name__ == "__main__":
     app.run(host='0.0.0.0',port=8080)
