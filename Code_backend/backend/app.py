@@ -9,7 +9,7 @@ dp_ip = os.getenv("db_ip")
 ConnectionData = {}
 ConnectionData['user'] = 'postgres'
 ConnectionData['password'] = 'password'
-ConnectionData['host'] = str(db_ip)
+ConnectionData['host'] = str(dp_ip)
 ConnectionData['port'] = '5432'
 ConnectionData['database'] = 'teamhhl'
 
