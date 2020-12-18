@@ -16,4 +16,6 @@ sudo docker rm backend
 sudo docker exec -it coredb bash
 
 #postgres
-sudo docker run -d --restart unless-stopped --name coredb -e POSGRESS_DB=postgres -v ~northwind db:var/lib/postgres/data -p 5432:5432 postgres
+//sudo docker run -d --restart unless-stopped --name coredb -e POSTGTRES_PASSWORD=postgres -e POSGRESS_DB=postgres -v ~northwind db:var/lib/postgresql/data -p 5432:5432 postgres
+sudo docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword postgres
+sudo docker exec -it my-postgres bash
