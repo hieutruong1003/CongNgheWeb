@@ -5,13 +5,13 @@ import DataObjects as do
 
 app = Flask(__name__)
 
-dp_ip = os.getenv("db_ip")
+dp_ip = os.getenv("10.0.2.15")
 ConnectionData = {}
 ConnectionData['user'] = 'postgres'
-ConnectionData['password'] = 'password'
+ConnectionData['password'] = 'postgres'
 ConnectionData['host'] = str(dp_ip)
 ConnectionData['port'] = '5432'
-ConnectionData['database'] = 'teamhhl'
+ConnectionData['database'] = 'northwind'
 
 @app.route("/")
 def hello():
