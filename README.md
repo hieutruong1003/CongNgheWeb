@@ -14,3 +14,6 @@ sudo docker rm backend
 
 #lenh kết nối csdl
 sudo docker exec -it coredb bash
+
+#postgres
+sudo docker run -d --restart unless-stopped --name coredb -e POSGRESS_DB=postgres -v ~northwind db:var/lib/postgres/data -p 5432:5432 postgres
