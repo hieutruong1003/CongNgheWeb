@@ -1,6 +1,6 @@
 class Customer:
     def __init__(self,CustomerID,CustomerName,ContactName,Address,City,PostalCode,Country):
-        self.CustomerID = CustpmerID
+        self.CustomerID = CustomerID
         self.CustomerName = CustomerName
         self.ContactName = ContactName
         self.Address = Address
