@@ -5,11 +5,11 @@ import DataObjects as do
 
 app = Flask(__name__)
 
-dp_ip = os.getenv("dp_ip")
+db_ip = os.getenv("db_ip")
 ConnectionData = {}
 ConnectionData['user'] = 'postgres'
 ConnectionData['password'] = 'postgres'
-ConnectionData['host'] = str(dp_ip)
+ConnectionData['host'] = str(db_ip)
 ConnectionData['port'] = '5432'
 ConnectionData['database'] = 'northwind'
 
