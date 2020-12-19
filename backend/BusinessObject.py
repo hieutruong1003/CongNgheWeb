@@ -1,4 +1,4 @@
-class Customer:
+class Customers:
     def __init__(self,CustomerID,CustomerName,ContactName,Address,City,PostalCode,Country):
         self.CustomerID = CustomerID
         self.CustomerName = CustomerName

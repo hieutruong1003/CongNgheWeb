@@ -3,7 +3,7 @@ class Customer:
     def __init__(slef,ConnectionData = None):
         if ConnectionData is None:
             self.ConnectionData = ConnectionData
-    def insert(self,customer):
+    def insert(self,customers):
         con = None
         try:
             con = psycopg2.connect(user = self.ConnectionData['user'],
@@ -13,7 +13,7 @@ class Customer:
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
             sql = "INSERT INTO Customers(CustomerName,ContactName, Address,City,PostalCode,Country) VALUES (%s,%s,%s,%s,%s,%s)"
-            record_to_insert = (customer.CustomerName,customer.ContactName,customer.Address,customer.City,customer.PostalCode,customer.Country)
+            record_to_insert = (customers.CustomerName,customers.ContactName,customers.Address,customers.City,customers.PostalCode,customers.Country)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()

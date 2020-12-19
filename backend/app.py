@@ -15,12 +15,12 @@ ConnectionData['database'] = 'northwind'
 
 @app.route("/")
 def hello():
-    c1 = bo.Customer(1,'DAU xanh','Peter','566 Nui Thanh', 'Da Nang','5000','VietNam')
+    c1 = bo.Customerss(1,'DAU xanh','Peter','566 Nui Thanh', 'Da Nang','5000','VietNam')
     return c1.CustomerName
 @app.route("/test_insert")
 def test_inset():
-    c2 = do.Customer(ConnectionData)
-    c1 = bo.Customer(1,'DAU xanh','Peter','566 Nui Thanh', 'Da Nang','5000','VietNam')
+    c2 = do.Customers(ConnectionData)
+    c1 = bo.Customers(1,'DAU xanh','Peter','566 Nui Thanh', 'Da Nang','5000','VietNam')
     s1 = c2.insert(c1)
     return s1
 
