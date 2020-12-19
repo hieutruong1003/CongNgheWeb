@@ -1,7 +1,7 @@
 import psycopg2
 class Customer:
-    def __init__(slef,ConnectionData):
-        self.ConnectionData = ConnectionData
+    def __init__(slef,ConnectionData ):
+            self.ConnectionData = ConnectionData
     def insert(self,customer):
         con = None
         try:
