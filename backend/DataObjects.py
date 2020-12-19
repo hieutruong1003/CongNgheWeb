@@ -1,5 +1,5 @@
 import psycopg2
-class Customer:
+class Customers:
     def __init__(slef,ConnectionData = None):
         if ConnectionData is None:
             self.ConnectionData = ConnectionData
