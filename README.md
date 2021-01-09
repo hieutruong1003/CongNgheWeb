@@ -19,3 +19,13 @@ sudo docker exec -it coredb bash
 //sudo docker run -d --restart unless-stopped --name coredb -e POSTGTRES_PASSWORD=postgres -e POSGRESS_DB=postgres -v ~northwind db:var/lib/postgresql/data -p 5432:5432 postgres
 sudo docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword postgres
 sudo docker exec -it my-postgres bash
+
+CREATE TABLE TblCustomers (
+    CustomerID SERIAL PRIMARY KEY,
+    CustomerName varchar(255),
+    ContactName varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    PostalCode varchar(255),
+    Country varchar(255)
+);
