@@ -20,7 +20,7 @@ sudo docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=mysecret
 sudo docker exec -it my-postgres bash
 psql -U postgres
 \l(liệt kê danh sách database) - \c database(connect)
-CREATE TABLE TblCustomers (
+CREATE TABLE Customers (
     CustomerID SERIAL PRIMARY KEY,
     CustomerName varchar(255),
     ContactName varchar(255),
@@ -30,19 +30,19 @@ CREATE TABLE TblCustomers (
     Country varchar(255)
 );
 
-CREATE TABLE tblcategories (
+CREATE TABLE Categories (
     CategoryID SERIAL PRIMARY KEY,
     CategoryName varchar(255),
     Description varchar(255)
 );
 
-CREATE TABLE tblshippers (
+CREATE TABLE Shippers (
     ShipperID SERIAL PRIMARY KEY,
     ShipperName varchar(255),
     Phone varchar(255)
 );
 
-CREATE TABLE tblsuppliers (
+CREATE TABLE Suppliers (
     SupplierID SERIAL PRIMARY KEY,
     SupplierName varchar(255),
     ContactName varchar(255),
@@ -53,7 +53,7 @@ CREATE TABLE tblsuppliers (
     Phone varchar(255)
 );
 
-CREATE TABLE tblemployees (
+CREATE TABLE Employees (
     EmployeeID SERIAL PRIMARY KEY,
     LastName varchar(255),
     FirstName varchar(255),
@@ -62,7 +62,7 @@ CREATE TABLE tblemployees (
     Notes varchar(255)
 );
 
-CREATE TABLE tblproducts (
+CREATE TABLE Products (
     ProductID SERIAL PRIMARY KEY,
     ProductName varchar(255),
     Unit varchar(255),
@@ -71,7 +71,7 @@ CREATE TABLE tblproducts (
     CategoryID int
 );
 
-CREATE TABLE tblorders (
+CREATE TABLE Orders (
     OrderID SERIAL PRIMARY KEY,
     CustomerID int,
     EmployeeID int,
@@ -79,7 +79,7 @@ CREATE TABLE tblorders (
     ShipperID int
 );
 
-CREATE TABLE tblorderdetails (
+CREATE TABLE Orderdetails (
     OrderDetailID SERIAL PRIMARY KEY,
     OrderID int,
     ProductID int,

@@ -119,7 +119,7 @@ class Customer:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM TblCustomers WHERE customerid=%s"
+            sql = "DELETE FROM  Customers WHERE customerid=%s"
             cur.execute(sql,(customer.CustomerID,))
             con.commit()           
             row = cur.rowcount
@@ -145,12 +145,12 @@ class Employee:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO tblemployees(lastname, firstname, birthdate, photo, notes) VALUES (%s, %s, %s, %s, %s)"
+            sql = "INSERT INTO  Employees(lastname, firstname, birthdate, photo, notes) VALUES (%s, %s, %s, %s, %s)"
             record_to_insert = (employee.LastName, employee.FirstName, employee.Birthdate, employee.Photo, employee.Notes)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()
-            return 'Insert tblemployees successfully'
+            return 'Insert  Employees successfully'
         except (Exception, psycopg2.DatabaseError) as error:
             return str(error)
         finally:
@@ -166,7 +166,7 @@ class Employee:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblemployees"
+            sql = "SELECT * FROM  Employees"
             cur.execute(sql)
             con.commit()
             rows = cur.fetchall()
@@ -192,7 +192,7 @@ class Employee:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblemployees WHERE employeeid=%s"
+            sql = "SELECT * FROM  Employees WHERE employeeid=%s"
             cur.execute(sql, (employee.EmployeeID, ))
             con.commit()
             row = cur.fetchone()
@@ -217,7 +217,7 @@ class Employee:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "UPDATE tblemployees SET lastname=%s, firstname=%s, birthdate=%s, photo=%s, notes=%s WHERE employeeid=%s"
+            sql = "UPDATE  employees SET lastname=%s, firstname=%s, birthdate=%s, photo=%s, notes=%s WHERE employeeid=%s"
             cur.execute(sql, (employee.LastName, employee.FirstName, employee.Birthdate, employee.Photo, employee.Notes, employee.EmployeeID))
             con.commit()
             row = cur.rowcount
@@ -240,7 +240,7 @@ class Employee:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM tblemployees WHERE employeeid=%s"
+            sql = "DELETE FROM  employees WHERE employeeid=%s"
             cur.execute(sql, (employee.EmployeeID, ))
             con.commit()
             row = cur.rowcount
@@ -266,12 +266,12 @@ class Supplier:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO tblsuppliers(Suppliername, ContactName, Address, City, PostalCode, Country, Phone) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO  suppliers(Suppliername, ContactName, Address, City, PostalCode, Country, Phone) VALUES (%s, %s, %s, %s, %s, %s, %s)"
             record_to_insert = (supplier.SupplierName, supplier.ContactName, supplier.Address, supplier.City, supplier.PostalCode, supplier.Country, supplier.Phone)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()
-            return 'Insert tblsuppliers successfully'
+            return 'Insert  suppliers successfully'
         except (Exception, psycopg2.DatabaseError) as error:
             return str(error)
         finally:
@@ -287,7 +287,7 @@ class Supplier:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblsuppliers"
+            sql = "SELECT * FROM  suppliers"
             cur.execute(sql)
             con.commit()
             rows = cur.fetchall()
@@ -313,7 +313,7 @@ class Supplier:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblsuppliers WHERE supplierid=%s"
+            sql = "SELECT * FROM  suppliers WHERE supplierid=%s"
             cur.execute(sql, (supplier.SupplierID, ))
             con.commit()
             row = cur.fetchone()
@@ -338,7 +338,7 @@ class Supplier:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "UPDATE tblsuppliers SET suppliername=%s, contactname=%s, address=%s, city=%s, postalcode=%s, country=%s, phone=%s WHERE supplierid=%s"
+            sql = "UPDATE  suppliers SET suppliername=%s, contactname=%s, address=%s, city=%s, postalcode=%s, country=%s, phone=%s WHERE supplierid=%s"
             cur.execute(sql, (supplier.SupplierName, supplier.ContactName, supplier.Address, supplier.City, supplier.PostalCode, supplier.Country, supplier.Phone, supplier.SupplierID))
             con.commit()
             row = cur.rowcount
@@ -361,7 +361,7 @@ class Supplier:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM tblsuppliers WHERE supplierid=%s"
+            sql = "DELETE FROM  suppliers WHERE supplierid=%s"
             cur.execute(sql, (supplier.SupplierID, ))
             con.commit()
             row = cur.rowcount
@@ -387,12 +387,12 @@ class Category:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO tblcategories(categoryname, description) VALUES (%s, %s)"
+            sql = "INSERT INTO  categories(categoryname, description) VALUES (%s, %s)"
             record_to_insert = (category.CategoryName, category.Description)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()
-            return 'Insert tblcategories successfully'
+            return 'Insert  categories successfully'
         except (Exception, psycopg2.DatabaseError) as error:
             return str(error)
         finally:
@@ -408,7 +408,7 @@ class Category:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblcategories"
+            sql = "SELECT * FROM  categories"
             cur.execute(sql)
             con.commit()
             rows = cur.fetchall()
@@ -434,7 +434,7 @@ class Category:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblcategories WHERE categoryid=%s"
+            sql = "SELECT * FROM  categories WHERE categoryid=%s"
             cur.execute(sql, (category.CategoryID, ))
             con.commit()
             row = cur.fetchone()
@@ -459,7 +459,7 @@ class Category:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "UPDATE tblcategories SET categoryname=%s, description=%s WHERE categoryid=%s"
+            sql = "UPDATE  categories SET categoryname=%s, description=%s WHERE categoryid=%s"
             cur.execute(sql, (category.CategoryName, category.Description, category.CategoryID))
             con.commit()
             row = cur.rowcount
@@ -482,7 +482,7 @@ class Category:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM tblcategories WHERE categoryid=%s"
+            sql = "DELETE FROM  categories WHERE categoryid=%s"
             cur.execute(sql, (category.CategoryID, ))
             con.commit()
             row = cur.rowcount
@@ -509,12 +509,12 @@ class Order:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO tblorders(customerid, employeeid, orderdate, shipperid) VALUES (%s, %s, %s, %s)"
+            sql = "INSERT INTO  orders(customerid, employeeid, orderdate, shipperid) VALUES (%s, %s, %s, %s)"
             record_to_insert = (order.CustomerID, order.EmployeeID, order.OrderDate, order.ShipperID)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()
-            return 'Insert tblorders successfully'
+            return 'Insert  orders successfully'
         except (Exception, psycopg2.DatabaseError) as error:
             return str(error)
         finally:
@@ -530,7 +530,7 @@ class Order:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblorders"
+            sql = "SELECT * FROM  orders"
             cur.execute(sql)
             con.commit()
             rows = cur.fetchall()
@@ -556,7 +556,7 @@ class Order:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblorders WHERE orderid=%s"
+            sql = "SELECT * FROM  orders WHERE orderid=%s"
             cur.execute(sql, (order.OrderID, ))
             con.commit()
             row = cur.fetchone()
@@ -581,7 +581,7 @@ class Order:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "UPDATE tblorders SET customerid=%s, employeeid=%s, orderdate=%s, shipperid=%s WHERE orderid=%s"
+            sql = "UPDATE  orders SET customerid=%s, employeeid=%s, orderdate=%s, shipperid=%s WHERE orderid=%s"
             cur.execute(sql, (order.CustomerID, order.EmployeeID, order.OrderDate, order.ShipperID, order.OrderID))
             con.commit()
             row = cur.rowcount
@@ -604,7 +604,7 @@ class Order:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM tblorders WHERE orderid=%s"
+            sql = "DELETE FROM  orders WHERE orderid=%s"
             cur.execute(sql, (order.OrderID, ))
             con.commit()
             row = cur.rowcount
@@ -631,12 +631,12 @@ class OrderDetail:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO tblorderdetails(orderid, productid, quantity) VALUES (%s, %s, %s)"
+            sql = "INSERT INTO  orderdetails(orderid, productid, quantity) VALUES (%s, %s, %s)"
             record_to_insert = (orderr.OrderID, orderr.ProductID, orderr.Quantity)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()
-            return 'Insert tblorderdetails successfully'
+            return 'Insert  orderdetails successfully'
         except (Exception, psycopg2.DatabaseError) as error:
             return str(error)
         finally:
@@ -652,7 +652,7 @@ class OrderDetail:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblorderdetails"
+            sql = "SELECT * FROM  orderdetails"
             cur.execute(sql)
             con.commit()
             rows = cur.fetchall()
@@ -678,7 +678,7 @@ class OrderDetail:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblorderdetails WHERE orderdetailid=%s"
+            sql = "SELECT * FROM  orderdetails WHERE orderdetailid=%s"
             cur.execute(sql, (orderr.OrderDetailID, ))
             con.commit()
             row = cur.fetchone()
@@ -703,7 +703,7 @@ class OrderDetail:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "UPDATE tblorderdetails SET orderid=%s, productid=%s, quantity=%s WHERE orderdetailid=%s"
+            sql = "UPDATE  orderdetails SET orderid=%s, productid=%s, quantity=%s WHERE orderdetailid=%s"
             cur.execute(sql, (orderr.OrderID, orderr.ProductID, orderr.Quantity, orderr.OrderDetailID))
             con.commit()
             row = cur.rowcount
@@ -726,7 +726,7 @@ class OrderDetail:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM tblorderdetails WHERE orderdetailid=%s"
+            sql = "DELETE FROM  orderdetails WHERE orderdetailid=%s"
             cur.execute(sql, (orderr.OrderDetailID, ))
             con.commit()
             row = cur.rowcount
@@ -752,12 +752,12 @@ class Product:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO tblproducts(ProductName, SupplierID, CategoryID, Unit, Price) VALUES (%s, %s, %s, %s, %s)"
+            sql = "INSERT INTO  products(ProductName, SupplierID, CategoryID, Unit, Price) VALUES (%s, %s, %s, %s, %s)"
             record_to_insert = (product.ProductName, product.SupplierID, product.CategoryID, product.Unit, product.Price)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()
-            return 'Insert TblProducts successfully'
+            return 'Insert  Products successfully'
         except (Exception, psycopg2.DatabaseError) as error:
             return str(error)
         finally:
@@ -773,7 +773,7 @@ class Product:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblproducts"
+            sql = "SELECT * FROM  products"
             cur.execute(sql)
             con.commit()           
             rows = cur.fetchall()
@@ -799,7 +799,7 @@ class Product:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblproducts WHERE productid=%s"
+            sql = "SELECT * FROM  products WHERE productid=%s"
             cur.execute(sql, (product.ProductID,))
             con.commit()           
             row = cur.fetchone()
@@ -824,7 +824,7 @@ class Product:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "UPDATE tblproducts SET productname=%s, supplierid=%s, categoryid=%s, unit=%s, price=%s WHERE productid=%s "
+            sql = "UPDATE  products SET productname=%s, supplierid=%s, categoryid=%s, unit=%s, price=%s WHERE productid=%s "
             cur.execute(sql,(product.ProductName, product.SupplierID, product.CategoryID, product.Unit, product.Price, product.ProductID))
             con.commit()           
             row = cur.rowcount
@@ -847,7 +847,7 @@ class Product:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM tblproducts WHERE productid=%s"
+            sql = "DELETE FROM  products WHERE productid=%s"
             cur.execute(sql,(product.ProductID,))
             con.commit()           
             row = cur.rowcount
@@ -873,12 +873,12 @@ class Shipper:
                                   port=self.ConnectionData['port'],
                                   database=self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "INSERT INTO tblshippers(ShipperID, ShipperName, Phone) VALUES (%s, %s, %s)"
+            sql = "INSERT INTO  shippers(ShipperID, ShipperName, Phone) VALUES (%s, %s, %s)"
             record_to_insert = (shipper.ShipperID, shipper.ShipperName, shipper.Phone)
             cur.execute(sql, record_to_insert)
             con.commit()
             con.close()
-            return 'Insert TblShippers successfully'
+            return 'Insert  Shippers successfully'
         except (Exception, psycopg2.DatabaseError) as error:
             return str(error)
         finally:
@@ -894,7 +894,7 @@ class Shipper:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblshippers"
+            sql = "SELECT * FROM  shippers"
             cur.execute(sql)
             con.commit()           
             rows = cur.fetchall()
@@ -920,7 +920,7 @@ class Shipper:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblshippers WHERE shipperid=%s"
+            sql = "SELECT * FROM  shippers WHERE shipperid=%s"
             cur.execute(sql, (shipper.ShipperID,))
             con.commit()           
             row = cur.fetchone()
@@ -945,7 +945,7 @@ class Shipper:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "UPDATE tblshippers SET shippername=%s, phone=%s WHERE shipperid=%s "
+            sql = "UPDATE  shippers SET shippername=%s, phone=%s WHERE shipperid=%s "
             cur.execute(sql,(shipper.ShipperName, shipper.Phone, shipper.ShipperID))
             con.commit()           
             row = cur.rowcount
@@ -968,7 +968,7 @@ class Shipper:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "DELETE FROM tblshippers WHERE shipperid=%s"
+            sql = "DELETE FROM  shippers WHERE shipperid=%s"
             cur.execute(sql,(shipper.ShipperID,))
             con.commit()           
             row = cur.rowcount
