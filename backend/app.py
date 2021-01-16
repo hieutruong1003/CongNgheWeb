@@ -17,22 +17,13 @@ ConnectionData['database'] = 'northwind'
 def hello():
    return "Xin chào tất cả các bạn!!!"
 @app.route("/test_insert")
-@app.route("/test_insert")
 def test_insert():
     c2 = do.Employee(ConnectionData)
     c1 = bo.Employee(1,'Thanh','Le','1999', 'Da Nang','VietNam')
     s1 = c2.insert(c1)
     return s1
 
-@app.route('/test_send_receive', methods=['POST'])
-def test_send_receive():
-    x = request.json['x']
-    y = x + 1
-    result = {}
-    result['y'] = y
-    return jsonify(result), 200
-
-@app.route('/user/insert', methods=['POST'])
+@app.route('/customer/insert', methods=['POST'])
 def user_insert():
     data = request.json
     c1 = bo.Customer(data['CustomerID'], data['CustomerName'], data['ContactName'], data['Address'], data['City'], data['PostalCode'], data['Country'])
@@ -42,12 +33,12 @@ def user_insert():
     result['message'] = s1
     return jsonify(result), 200
 
-@app.route('/user/all')
+@app.route('/customer/all')
 def get_all_user():
     result = do.Customer(ConnectionData).get_all()
     return jsonify(result), 200
 
-@app.route('/user/get/<int:customer_id>')
+@app.route('/customer/get/<int:customer_id>')
 def get_user_by_id(customer_id):
     c = bo.Customer(CustomerID=customer_id)
     result = do.Customer(ConnectionData).get_by_id(c)
@@ -55,14 +46,14 @@ def get_user_by_id(customer_id):
         return jsonify({'message':result[0]}), result[1]
     return jsonify(result[0].to_json()), 200
 
-@app.route('/user/update/<int:customer_id>',methods=['PUT'])
+@app.route('/customer/update/<int:customer_id>',methods=['PUT'])
 def update_user_by_id(customer_id):
     data = request.json
     c = bo.Customer(CustomerID = customer_id, CustomerName=data['CustomerName'], ContactName=data['ContactName'],Address=data['Address'], City=data['City'], PostalCode=data['PostalCode'], Country=data['Country'])
     result = do.Customer(ConnectionData).update(c)
     return jsonify({'message':result[0]}),result[1]
 
-@app.route('/user/delete/<int:customer_id>', methods=['DELETE'])
+@app.route('/customer/delete/<int:customer_id>', methods=['DELETE'])
 def delete_user_by_id(customer_id):
     c = bo.Customer(CustomerID=customer_id)
     result = do.Customer(ConnectionData).delete(c)
