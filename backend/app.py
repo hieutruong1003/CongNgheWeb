@@ -1,9 +1,11 @@
 from flask import Flask
+from flask_cors import CORS
 import os
 import BusinessObject as bo
 import DataObjects as do
 
 app = Flask(__name__)
+CORS(app);
 
 db_ip = os.getenv("db_ip")
 ConnectionData = {}
@@ -24,7 +26,7 @@ def test_insert():
     return s1
 
 @app.route('/customer/insert', methods=['POST'])
-def user_insert():
+def customer_insert():
     data = request.json
     c1 = bo.Customer(data['CustomerID'], data['CustomerName'], data['ContactName'], data['Address'], data['City'], data['PostalCode'], data['Country'])
     c2 = do.Customer(ConnectionData)

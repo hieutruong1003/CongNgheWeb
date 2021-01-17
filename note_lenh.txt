@@ -18,6 +18,7 @@ psql -U postgres
 # git
 git push origin HEAD:master --force
 
+# database northwind
 
 CREATE TABLE Customers (
     CustomerID SERIAL PRIMARY KEY,
@@ -60,14 +61,14 @@ CREATE TABLE Employees (
     Photo varchar(255),
     Notes varchar(255)
 );
-
+// Tạo lại Table
 CREATE TABLE Products (
     ProductID SERIAL PRIMARY KEY,
     ProductName varchar(255),
-    Unit varchar(255),
-    Price int,
     SupplierID int,
-    CategoryID int
+    CategoryID int,
+    Unit varchar(255),
+    Price int
 );
 
 CREATE TABLE Orders (
