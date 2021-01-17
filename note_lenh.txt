@@ -1,4 +1,7 @@
 
+from flask_cors import CORS
+CORS(app);
+
 # câu lệnh docker
 sudo docker build -t backend . (build project)
 sudo docker run -d --name backend --env dp_ip=10.0.2.15 -p 8080:8080 backend (chạy)
