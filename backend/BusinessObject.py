@@ -29,12 +29,12 @@ class Customer:
         }
 class Employee:
     def __init__(self, EmployeeID=None, LastName=None, FirstName=None, Birthdate=None, Photo=None, Notes=None):
-    self.EmployeeID = EmployeeID
-    self.LastName = LastName
-    self.FirstName = FirstName
-    self.Birthdate = Birthdate
-    self.Photo = Photo
-    self.Notes = Notes
+        self.EmployeeID = EmployeeID
+        self.LastName = LastName
+        self.FirstName = FirstName
+        self.Birthdate = Birthdate
+        self.Photo = Photo
+        self.Notes = Notes
 
     def fetch_data(self, data):
         self.EmployeeID = data[0]
