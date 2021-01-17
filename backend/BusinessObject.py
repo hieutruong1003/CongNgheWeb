@@ -45,14 +45,14 @@ class Employee:
         self.Notes = data[5]
 
     def to_json(self):
-    return{
-        'EmployeeID': self.EmployeeID,
-        'LastName': self.LastName,
-        'FirstName': self.FirstName,
-        'Birthdate': self.Birthdate,
-        'Photo': self.Photo,
-        'Notes': self.Notes
-    }
+        return{
+            'EmployeeID': self.EmployeeID,
+            'LastName': self.LastName,
+            'FirstName': self.FirstName,
+            'Birthdate': self.Birthdate,
+            'Photo': self.Photo,
+            'Notes': self.Notes
+        }
 class Supplier:
     def __init__(self, SupplierID=None, SupplierName=None, ContactName=None, Address=None, City=None, PostalCode=None, Country=None, Phone=None):
     self.SupplierID = SupplierID
