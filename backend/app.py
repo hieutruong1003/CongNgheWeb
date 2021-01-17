@@ -1,11 +1,10 @@
 from flask import Flask
-from flask_cors import CORS
+
 import os
 import BusinessObject as bo
 import DataObjects as do
 
 app = Flask(__name__)
-CORS(app);
 
 db_ip = os.getenv("db_ip")
 ConnectionData = {}
@@ -309,7 +308,8 @@ def update_shipper_by_id(shipper_id):
 def delete_shipper_by_id(shipper_id):
     c = bo.Shipper(ShipperID=shipper_id)
     result = do.Shipper(ConnectionData).delete(c)
-    return jsonify({'message':result[0]}
+    return jsonify({'message':result[0]}),result[1]
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=8080)
