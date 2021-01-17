@@ -55,14 +55,14 @@ class Employee:
         }
 class Supplier:
     def __init__(self, SupplierID=None, SupplierName=None, ContactName=None, Address=None, City=None, PostalCode=None, Country=None, Phone=None):
-    self.SupplierID = SupplierID
-    self.SupplierName = SupplierName
-    self.ContactName = ContactName
-    self.Address = Address
-    self.City = City
-    self.PostalCode = PostalCode
-    self.Country = Country
-    self.Phone = Phone
+        self.SupplierID = SupplierID
+        self.SupplierName = SupplierName
+        self.ContactName = ContactName
+        self.Address = Address
+        self.City = City
+        self.PostalCode = PostalCode
+        self.Country = Country
+        self.Phone = Phone
 
     def fetch_data(self, data):
         self.SupplierID = data[0]
@@ -87,9 +87,9 @@ class Supplier:
         }
 class Category:
     def __init__(self, CategoryID=None, CategoryName=None, Description=None):
-    self.CategoryID = CategoryID
-    self.CategoryName = CategoryName
-    self.Description = Description
+        self.CategoryID = CategoryID
+        self.CategoryName = CategoryName
+        self.Description = Description
 
     def fetch_data(self, data):
         self.CategoryID = data[0]
