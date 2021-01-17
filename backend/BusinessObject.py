@@ -45,7 +45,7 @@ class Employee:
         self.Notes = data[5]
 
     def to_json(self):
-    return {
+    return{
         'EmployeeID': self.EmployeeID,
         'LastName': self.LastName,
         'FirstName': self.FirstName,
@@ -75,7 +75,7 @@ class Supplier:
         self.Phone = data[7]
 
     def to_json(self):
-        return {
+        return{
             'SupplierID': self.SupplierID,
             'SupplierName': self.SupplierName,
             'ContactName': self.ContactName,
@@ -97,7 +97,7 @@ class Category:
         self.Description = data[2]
 
     def to_json(self):
-        return {
+        return{
             'CategoryID': self.CategoryID,
             'CategoryName': self.CategoryName,
             'Description': self.Description
@@ -118,7 +118,7 @@ class Order:
         self.ShipperID = data[4]
 
     def to_json(self):
-        return {
+        return{
             'OrderID': self.OrderID,
             'CustomerID': self.CustomerID,
             'EmployeeID': self.EmployeeID,
@@ -139,7 +139,7 @@ class OrderDetail:
         self.Quantity = data[3]
 
     def to_json(self):
-        return {
+        return{
             'OrderDetailID': self.OrderDetailID,
             'OrderID': self.OrderID,
             'ProductID': self.ProductID,
