@@ -1,5 +1,4 @@
 from flask import Flask
-
 import os
 import BusinessObject as bo
 import DataObjects as do
