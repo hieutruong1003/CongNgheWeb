@@ -311,5 +311,5 @@ def delete_shipper_by_id(shipper_id):
     result = do.Shipper(ConnectionData).delete(c)
     return jsonify({'message':result[0]}
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=8080)
+# if __name__ == "__main__":
+#     app.run(host='0.0.0.0',port=8080)

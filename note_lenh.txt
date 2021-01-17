@@ -9,9 +9,11 @@ sudo docker rm --force backend
 #lenh kết nối csdl
 sudo docker exec -it coredb bash
 #postgres
-//sudo docker run -d --restart unless-stopped --name coredb -e POSTGTRES_PASSWORD=postgres -e POSGRESS_DB=postgres -v ~northwind db:var/lib/postgresql/data -p 5432:5432 postgres
-sudo docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword postgres
-sudo docker exec -it my-postgres bash
+//sudo docker run -d --restart unless-stopped --name coredb -e POSTGTRES_PASSWORD=postgres -e POSGRESS_DB=postgres -v ~db:/var/lib/postgresql/data -p 5432:5432 postgres
+sudo docker run -d -p 5432:5432 --name coredb -e POSTGRES_PASSWORD=mysecretpassword postgres
+sudo docker run -d --name coredb -e POSTGTRES_PASSWORD=postgres -e POSGRESS_DB=postgres -v ~/db:/var/lib/postgresql/data -p 5432:5432 postgres
+
+sudo docker exec -it coredb bash
 psql -U postgres
 \l(liệt kê danh sách database) - \c database(connect)
 
@@ -61,7 +63,7 @@ CREATE TABLE Employees (
     Photo varchar(255),
     Notes varchar(255)
 );
-// Tạo lại Table
+
 CREATE TABLE Products (
     ProductID SERIAL PRIMARY KEY,
     ProductName varchar(255),
