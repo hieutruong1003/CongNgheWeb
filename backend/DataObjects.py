@@ -36,7 +36,7 @@ class Customer:
 
         # Hàm lấy tất hàng có trong bảng Custumers
         def get_all(self):
-            con = None
+        con = None
         try:
             con = psycopg2.connect(user = self.ConnectionData['user'],
                                 password = self.ConnectionData['password'],
