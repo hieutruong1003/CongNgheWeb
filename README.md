@@ -6,8 +6,8 @@
 ## 3. Phan Thanh Lâm
 
 # How to run
-Build image: docker build -t backend .
-Run the container: docker run -d --name backend -e password=postgres -p 8080:8080 backend
+* Build image: docker build -t backend .
+* Run the container: docker run -d --name backend -e password=postgres -p 8080:8080 backend
 
 # Entity
 
