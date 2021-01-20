@@ -7,7 +7,7 @@
 
 # How to run
 * Build image: docker build -t backend .
-* Run the container: docker run -d --name backend -e password=postgres -p 8080:8080 backend
+* Run the container: sudo docker run -d --name backend --env dp_ip=10.0.2.15 -p 8080:8080 backend
 
 # Entity
 
