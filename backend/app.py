@@ -70,7 +70,7 @@ def employee_insert():
     result['message'] = s1
     return jsonify(result), 200
 
-@app.route('/employee/all')
+@app.route('/employee/all', methods=['GET'])
 def get_all_employee():
     result = do.Employee(ConnectionData).get_all()
     return jsonify(result), 200
