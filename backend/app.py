@@ -2,8 +2,11 @@ from flask import Flask, jsonify, request
 import os
 import BusinessObject as bo
 import DataObjects as do
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 
 db_ip = os.getenv("dp_ip")
 ConnectionData = {}
@@ -16,10 +19,34 @@ ConnectionData['database'] = 'northwind'
 @app.route("/")
 def hello():
    return "Xin chào tất cả các bạn!!!"
-@app.route("/test_insert")
-def test_insert():
+@app.route("/test_insert/employee")
+def test_insertEmployee():
     c2 = do.Employee(ConnectionData)
     c1 = bo.Employee(1,'Truong','Hieu','1999-07-12', 'truonghieu.jpg','VietNam')
+    s1 = c2.insert(c1)
+    return s1
+@app.route("/test_insert/customer")
+def test_insertCustomer():
+    c2 = do.Customer(ConnectionData)
+    c1 = bo.Customer(1,'Phạm Trung Hoài','0369559606','588 Núi Thành', 'Đà Nẵng','550000', 'Việt Nam')
+    s1 = c2.insert(c1)
+    return s1
+@app.route("/test_insert/category")
+def test_insertCategories():
+    c2 = do.Category(ConnectionData)
+    c1 = bo.Category(1,"Đồ Uống","Coffes, Teas, Beers, and ales")
+    s1 = c2.insert(c1)
+    return s1
+@app.route("/test_insert/shipper")
+def test_insertShippers():
+    c2 = do.Shipper(ConnectionData)
+    c1 = bo.Shipper(1,"Phan Thanh Lâm","0398476877")
+    s1 = c2.insert(c1)
+    return s1
+@app.route("/test_insert/supplier")
+def test_insertSuppliers():
+    c2 = do.Supplier(ConnectionData)
+    c1 = bo.Supplier(1,"Exotic Liquid","Charlotte Cooper","49 Gilbert St","Londona","EC1 4SD","UK","(171) 555-2222")
     s1 = c2.insert(c1)
     return s1
 

@@ -91,5 +91,5 @@ CREATE TABLE Orderdetails (
     Quantity int
 );
 
-INSERT INTO Customers(CustomerName,ContactName, Address,City,PostalCode,Country) 
-VALUES ("PhamTrungHoai","0398675345","588_Nui Thanh","DaNang","550000","VietNam");
+INSERT INTO customers(customerid,customername,contactname,address,city,postalcode,country) 
+VALUES(1,"Phạm Trung Hoài","0398675345","588 Núi Thanh","DaNang","550000","VietNam");
